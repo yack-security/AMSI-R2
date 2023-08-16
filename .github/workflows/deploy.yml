@@ -1,0 +1,27 @@
+name: Deploy worker to cloudflare
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    name: Setup and Deploy Worker
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          preCommands: |
+            sed -i "s/BUCKETNAME/$BUCKET_SECRET/g" wrangler.toml
+            sed -i "s/ACCOUNTID/$ACCOUNT_ID_SECRET/g" wrangler.toml
+            sed -i "s/subdomain.yourdomain.com/$WORKER_ENDPOINT/g" wrangler.toml
+        env:
+          BUCKET_SECRET: ${{ secrets.BUCKET_NAME }}
+          ACCOUNT_ID_SECRET: ${{ secrets.CF_ACCOUNT_ID }}
+          WORKER_ENDPOINT: ${{ secrets.WORKER_ENDPOINT }}

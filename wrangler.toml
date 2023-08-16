@@ -1,0 +1,13 @@
+name = "amsi-r2"
+main = "src/index.js"
+compatibility_date = "2023-08-16"
+account_id = "ACCOUNTID"
+
+routes = [
+  { pattern = "subdomain.yourdomain.com", custom_domain = true }
+]
+
+[[r2_buckets]]
+binding = 'amsibucket'
+bucket_name = 'BUCKETNAME'
+preview_bucket_name = 'BUCKETNAME'
