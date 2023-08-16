@@ -13,7 +13,8 @@ export default {
       const payload = new Response(object.body);
       return payload;
     } catch (error) { // Handle errors
-      return new Response('An error occurred: ' + error.message, {status: 500});
+      // return new Response('An error occurred: ' + error.message, {status: 500});
+      return new Response(JSON.stringify({ "Error" : "Sorry nothing here!" }, null, 2), { status: 404, headers: { "content-type": "application/json;charset=UTF-8" } })
     }
   }
 };
