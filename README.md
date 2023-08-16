@@ -74,7 +74,7 @@ Integrate the logic/obfuscation of [AMSI.fail](https://github.com/Flangvik/AMSI.
 
 ## More ?
 
-You want something with a visual interface ? Take a look at [Some-R2-Explorer](https://github.com/service-yack/Some-R2-Explorer)
+You want something with a UI ? Take a look at [Some-R2-Explorer](https://github.com/service-yack/Some-R2-Explorer)
 
 ## Credits
 
