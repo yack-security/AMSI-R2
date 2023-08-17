@@ -20,10 +20,10 @@ Cloudflare worker function that selects a AMSI bypass file from a folder in a Cl
 - Cloudflare API token. Doc [here](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
 - Create a R2 bucket
 - In your new R2 bucket, create a folder which will contain your AMSI bypass scripts. And obviously... add your scripts in that folder.
-- Clone or fork the project
-- Modify the custom domain `wrangler.toml` file to fit your needs (only the route section should be modified in this file!)
+- Fork or clone the project
 - Setup [Github secrets repository](https://docs.github.com/en/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository)
-- A [domain setup in CF](https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/) to use the [custom domain feature](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/) in the `wrangler.toml` file
+- A [domain setup in CF](https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/) to use the [custom domain feature](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/).
+- You don't have to do any modifcation in `wrangler.toml` (except if you want to change the name of your worker or if you don't want to use a custom domain). We are using Github secrets to setup the `wrangler.toml` file.
 
 note: to use without custom domain(not recommended), you will need to modify 2 things:
 
@@ -33,8 +33,13 @@ note: to use without custom domain(not recommended), you will need to modify 2 t
 ## Installation
 
 ```bash
-git clone https://github.com/service-yack/Some-R2-Explorer
-
+# fork the project
+# setup secrets, R2, etc.
+git clone https://github.com/<your-user>/AMSI-R2.git
+cd AMSI-R2
+# ...
+git push -u origin main
+# go see your workers in cloudflare interface
 ```
 
 ## How to use
