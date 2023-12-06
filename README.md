@@ -2,7 +2,7 @@
 
 ## Summary
 
-Easy access to your amsi bypass script with Cloudflare workers and R2 bucket
+Easy access to your amsi bypass script with Cloudflare workers and R2 bucket. If no "payload id" is given, the workers will select one randomly.
 
 ## Description
 
